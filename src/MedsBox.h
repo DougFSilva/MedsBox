@@ -5,6 +5,7 @@
 
 class MedsBox {
     private: 
+        String id;
         String remedio;  
         String descricao;
         int periodicidade;
@@ -14,8 +15,9 @@ class MedsBox {
         bool ativo;
 
     public:
-        MedsBox(int endereco);
-        MedsBox(String remedio, String descricao, int periodicidade, int hora, int minuto, int endereco, bool ativo);
+        MedsBox(String id, int endereco);
+        MedsBox(String id, String remedio, String descricao, int periodicidade, int hora, int minuto, int endereco, bool ativo);
+        String getId();
         String getRemedio();
         String getDescricao();
         int getPeriodicidade();
@@ -23,6 +25,7 @@ class MedsBox {
         int getMinuto();
         int getEndereco();
         bool getAtivo();
+        void setId(String id)
         void setRemedio(String remedio);
         void setDescricao(String descricao);
         void setPeriodicidade(int periodicidade);

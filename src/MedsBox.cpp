@@ -1,6 +1,7 @@
 #include <MedsBox.h>
 
-MedsBox::MedsBox(int endereco){
+MedsBox::MedsBox(String id, int endereco){
+    this->id = id;
     this->remedio = "sem remedio";
     this->descricao = "sem remedio";
     this->periodicidade = 0;
@@ -10,7 +11,8 @@ MedsBox::MedsBox(int endereco){
     this->ativo = false;
 }
 
-MedsBox::MedsBox(String remedio, String descricao, int periodicidade, int hora, int minuto, int endereco, bool ativo){
+MedsBox::MedsBox(String id, String remedio, String descricao, int periodicidade, int hora, int minuto, int endereco, bool ativo){
+    this->id = id;
     this->remedio = remedio;
     this->descricao = descricao;
     this->periodicidade = periodicidade;
@@ -18,6 +20,10 @@ MedsBox::MedsBox(String remedio, String descricao, int periodicidade, int hora, 
     this->minuto = minuto;
     this->endereco = endereco;
     this->ativo = ativo;
+}
+
+String MedsBox::getId(){
+    return this->id;
 }
 
 String MedsBox::getRemedio(){
@@ -46,6 +52,10 @@ int MedsBox::getEndereco() {
 
 bool MedsBox::getAtivo() {
     return this->ativo;
+}
+
+void MedsBox::setId(String id) {
+    this->id = id;
 }
 
 void MedsBox::setRemedio(String remedio) {
