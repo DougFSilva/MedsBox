@@ -25,7 +25,7 @@ class MedsBox {
         int getMinuto();
         int getEndereco();
         bool getAtivo();
-        void setId(String id)
+        void setId(String id);
         void setRemedio(String remedio);
         void setDescricao(String descricao);
         void setPeriodicidade(int periodicidade);
