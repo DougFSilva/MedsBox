@@ -8,14 +8,14 @@ class MedsBox {
         String remedio;  
         String descricao;
         int periodicidade;
-        int horarioInicial;
-        int minutoInicial;
+        int hora;
+        int minuto;
         int endereco;
         bool ativo;
 
     public:
         MedsBox(int endereco);
-        MedsBox(String remedio, String descricao, int periodicidade, int horario, int minuto, int endereco, bool ativo);
+        MedsBox(String remedio, String descricao, int periodicidade, int hora, int minuto, int endereco, bool ativo);
         String getRemedio();
         String getDescricao();
         int getPeriodicidade();
