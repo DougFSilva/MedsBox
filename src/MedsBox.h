@@ -34,6 +34,8 @@ class MedsBox {
         void setAddress(int address);
         void setActive(bool active);
         bool compare(int hour, int minutes);
+        void on();
+        void off();
 };
 
 #endif

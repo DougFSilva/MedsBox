@@ -1,4 +1,5 @@
 #include <MedsBox.h>
+#include <Arduino.h>
 
 MedsBox::MedsBox(String id, int address){
     this->id = id;
@@ -9,6 +10,7 @@ MedsBox::MedsBox(String id, int address){
     this->minutes = 0;
     this->address = address;
     this->active = false;
+    pinMode(address, OUTPUT);
 }
 
 MedsBox::MedsBox(String id, String remedy, String description, int periodicity, int hour, int minutes, int address, bool active){
@@ -20,6 +22,7 @@ MedsBox::MedsBox(String id, String remedy, String description, int periodicity, 
     this->minutes = minutes;
     this->address = address;
     this->active = active;
+    pinMode(address, OUTPUT);
 }
 
 String MedsBox::getId(){
@@ -94,6 +97,14 @@ bool MedsBox::compare(int hour, int minutes) {
     }else {
         return false;
     }
+}
+
+void MedsBox::on(){
+    digitalWrite(this->address, HIGH);
+}
+
+void MedsBox::off(){
+    digitalWrite(this->address, LOW);
 }
 
 
