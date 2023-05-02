@@ -1,88 +1,99 @@
 #include <MedsBox.h>
 
-MedsBox::MedsBox(String id, int endereco){
+MedsBox::MedsBox(String id, int address){
     this->id = id;
-    this->remedio = "sem remedio";
-    this->descricao = "sem remedio";
-    this->periodicidade = 0;
-    this->hora = 0;
-    this->minuto = 0;
-    this->endereco = endereco;
-    this->ativo = false;
+    this->remedy = "sem remedy";
+    this->description = "sem remedy";
+    this->periodicity = 0;
+    this->hour = 0;
+    this->minutes = 0;
+    this->address = address;
+    this->active = false;
 }
 
-MedsBox::MedsBox(String id, String remedio, String descricao, int periodicidade, int hora, int minuto, int endereco, bool ativo){
+MedsBox::MedsBox(String id, String remedy, String description, int periodicity, int hour, int minutes, int address, bool active){
     this->id = id;
-    this->remedio = remedio;
-    this->descricao = descricao;
-    this->periodicidade = periodicidade;
-    this->hora = hora;
-    this->minuto = minuto;
-    this->endereco = endereco;
-    this->ativo = ativo;
+    this->remedy = remedy;
+    this->description = description;
+    this->periodicity = periodicity;
+    this->hour = hour;
+    this->minutes = minutes;
+    this->address = address;
+    this->active = active;
 }
 
 String MedsBox::getId(){
     return this->id;
 }
 
-String MedsBox::getRemedio(){
-    return this->remedio;
+String MedsBox::getRemedy(){
+    return this->remedy;
 }
 
-String MedsBox::getDescricao(){
-    return this->descricao;
+String MedsBox::getDescription(){
+    return this->description;
 }
 
-int MedsBox::getPeriodicidade() {
-    return this->periodicidade;
+int MedsBox::getPeriodicity() {
+    return this->periodicity;
 }
 
-int MedsBox::getHora() {
-    return this->hora;
+int MedsBox::getHour() {
+    return this->hour;
 }
 
-int MedsBox::getMinuto() {
-    return this->minuto;
+int MedsBox::getMinutes() {
+    return this->minutes;
 }
 
-int MedsBox::getEndereco() {
-    return this->endereco;
+int MedsBox::getAddress() {
+    return this->address;
 }
 
-bool MedsBox::getAtivo() {
-    return this->ativo;
+bool MedsBox::getActive() {
+    return this->active;
 }
 
 void MedsBox::setId(String id) {
     this->id = id;
 }
 
-void MedsBox::setRemedio(String remedio) {
-    this->remedio = remedio;
+void MedsBox::setRemedy(String remedy) {
+    this->remedy = remedy;
 }
 
-void MedsBox::setDescricao(String descricao) {
-    this->descricao = descricao;
+void MedsBox::setDescription(String description) {
+    this->description = description;
 }
 
-void MedsBox::setPeriodicidade(int periodicidade) {
-    this->periodicidade = periodicidade;
+void MedsBox::setPeriodicity(int periodicity) {
+    this->periodicity = periodicity;
 }
 
-void MedsBox::setHora(int hora) {
-    this->hora = hora;
+void MedsBox::setHour(int hour) {
+    this->hour = hour;
 }
 
-void MedsBox::setMinuto(int minuto) {
-    this->minuto = minuto;
+void MedsBox::setMinutes(int minutes) {
+    this->minutes = minutes;
 }
 
-void MedsBox::setEndereco(int endereco) {
-    this->endereco = endereco;
+void MedsBox::setAddress(int address) {
+    this->address = address;
 }
 
-void MedsBox::setAtivo(bool ativo) {
-    this->ativo = ativo;
+void MedsBox::setActive(bool active) {
+    this->active = active;
 }
+
+bool MedsBox::compare(int hour, int minutes) {
+    int medicationMinutes = (this->getHour*60) + this->minutes;
+    int currentMinutes = (hour*60) + minutes;
+    if(medicationMinutes == currentMinutes){
+        return true;
+    }else {
+        return false;
+    }
+}
+
 

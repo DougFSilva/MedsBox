@@ -6,33 +6,34 @@
 class MedsBox {
     private: 
         String id;
-        String remedio;  
-        String descricao;
-        int periodicidade;
-        int hora;
-        int minuto;
-        int endereco;
-        bool ativo;
+        String remedy;  
+        String description;
+        int periodicity;
+        int hour;
+        int minutes;
+        int address;
+        bool active;
 
     public:
-        MedsBox(String id, int endereco);
-        MedsBox(String id, String remedio, String descricao, int periodicidade, int hora, int minuto, int endereco, bool ativo);
+        MedsBox(String id, int address);
+        MedsBox(String id, String remedy, String description, int periodicity, int hour, int minutes, int address, bool active);
         String getId();
-        String getRemedio();
-        String getDescricao();
-        int getPeriodicidade();
-        int getHora();
-        int getMinuto();
-        int getEndereco();
-        bool getAtivo();
+        String getRemedy();
+        String getDescription();
+        int getPeriodicity();
+        int getHour();
+        int getMinutes();
+        int getAddress();
+        bool getActive();
         void setId(String id);
-        void setRemedio(String remedio);
-        void setDescricao(String descricao);
-        void setPeriodicidade(int periodicidade);
-        void setHora(int hora);
-        void setMinuto(int minuto);
-        void setEndereco(int endereco);
-        void setAtivo(bool ativo);
+        void setRemedy(String remedy);
+        void setDescription(String description);
+        void setPeriodicity(int periodicity);
+        void setHour(int hour);
+        void setMinutes(int minutes);
+        void setAddress(int address);
+        void setActive(bool active);
+        bool compare(int hour, int minutes);
 };
 
 #endif
