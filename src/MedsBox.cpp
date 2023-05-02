@@ -87,7 +87,7 @@ void MedsBox::setActive(bool active) {
 }
 
 bool MedsBox::compare(int hour, int minutes) {
-    int medicationMinutes = (this->getHour*60) + this->minutes;
+    int medicationMinutes = (this->hour*60) + this->minutes;
     int currentMinutes = (hour*60) + minutes;
     if(medicationMinutes == currentMinutes){
         return true;
