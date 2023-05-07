@@ -1,32 +1,32 @@
 #include <MedsBox.h>
 #include <Arduino.h>
 
-MedsBox::MedsBox(String id, int address){
-    this->id = id;
+MedsBox::MedsBox(int box, int pin){
+    this->box = box;
     this->remedy = "sem remedy";
     this->description = "sem remedy";
     this->periodicity = 0;
     this->hour = 0;
     this->minutes = 0;
-    this->address = address;
     this->active = false;
-    pinMode(address, OUTPUT);
+    this->pin = pin;
+    pinMode(pin, OUTPUT);
 }
 
-MedsBox::MedsBox(String id, String remedy, String description, int periodicity, int hour, int minutes, int address, bool active){
-    this->id = id;
+MedsBox::MedsBox(String remedy, String description, int periodicity, int hour, int minutes, int box, bool active, int pin){
+    this->box = box;
     this->remedy = remedy;
     this->description = description;
     this->periodicity = periodicity;
     this->hour = hour;
     this->minutes = minutes;
-    this->address = address;
     this->active = active;
-    pinMode(address, OUTPUT);
+    this->pin = pin;
+    pinMode(pin, OUTPUT);
 }
 
-String MedsBox::getId(){
-    return this->id;
+String MedsBox::getBox(){
+    return this->box;
 }
 
 String MedsBox::getRemedy(){
@@ -49,16 +49,16 @@ int MedsBox::getMinutes() {
     return this->minutes;
 }
 
-int MedsBox::getAddress() {
-    return this->address;
-}
-
 bool MedsBox::getActive() {
     return this->active;
 }
 
-void MedsBox::setId(String id) {
-    this->id = id;
+int MedsBox::getPin() {
+    return this->pin;
+}
+
+void MedsBox::setBox(int box) {
+    this->box = box;
 }
 
 void MedsBox::setRemedy(String remedy) {
@@ -81,12 +81,13 @@ void MedsBox::setMinutes(int minutes) {
     this->minutes = minutes;
 }
 
-void MedsBox::setAddress(int address) {
-    this->address = address;
-}
-
 void MedsBox::setActive(bool active) {
     this->active = active;
+}
+
+void MedsBox:: setPin(int pin) {
+    this->pin = pin;
+    pinMode(pin, OUTPUT);
 }
 
 bool MedsBox::compare(int hour, int minutes) {

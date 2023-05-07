@@ -5,34 +5,34 @@
 
 class MedsBox {
     private: 
-        String id;
+        int box;
         String remedy;  
         String description;
         int periodicity;
         int hour;
         int minutes;
-        int address;
         bool active;
+        int pin;
 
     public:
-        MedsBox(String id, int address);
-        MedsBox(String id, String remedy, String description, int periodicity, int hour, int minutes, int address, bool active);
-        String getId();
+        MedsBox(int box, int pin);
+        MedsBox(String remedy, String description, int periodicity, int hour, int minutes, int box, bool active, int pin);
+        int getBox();
         String getRemedy();
         String getDescription();
         int getPeriodicity();
         int getHour();
         int getMinutes();
-        int getAddress();
         bool getActive();
-        void setId(String id);
+        int getPin();
+        void setBox(int id);
         void setRemedy(String remedy);
         void setDescription(String description);
         void setPeriodicity(int periodicity);
         void setHour(int hour);
         void setMinutes(int minutes);
-        void setAddress(int address);
         void setActive(bool active);
+        void setPin(int pin);
         bool compare(int hour, int minutes);
         void on();
         void off();
