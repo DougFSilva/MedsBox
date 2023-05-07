@@ -25,7 +25,7 @@ MedsBox::MedsBox(String remedy, String description, int periodicity, int hour, i
     pinMode(pin, OUTPUT);
 }
 
-String MedsBox::getBox(){
+int MedsBox::getBox(){
     return this->box;
 }
 
