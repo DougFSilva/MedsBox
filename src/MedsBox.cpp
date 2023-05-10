@@ -1,6 +1,7 @@
 #include <MedsBox.h>
 #include <Arduino.h>
 
+
 MedsBox::MedsBox(int box, int pin){
     this->box = box;
     this->remedy = "sem remedy";
@@ -101,11 +102,11 @@ bool MedsBox::compare(int hour, int minutes) {
 }
 
 void MedsBox::on(){
-    digitalWrite(this->address, HIGH);
+    digitalWrite(this->pin, HIGH);
 }
 
 void MedsBox::off(){
-    digitalWrite(this->address, LOW);
+    digitalWrite(this->pin, LOW);
 }
 
 
