@@ -2,7 +2,7 @@
 #include <Arduino.h>
 
 
-MedsBox::MedsBox(int box, int pin){
+MedsBox::MedsBox(int box, int output, int microSwitch){
     this->box = box;
     this->remedy = "sem remedy";
     this->description = "sem remedy";
@@ -10,8 +10,11 @@ MedsBox::MedsBox(int box, int pin){
     this->hour = 0;
     this->minutes = 0;
     this->active = false;
-    this->pin = pin;
-    pinMode(pin, OUTPUT);
+    this->output = output;
+    this->microSwitch = microSwitch;
+    this->selected = false;
+    pinMode(output, OUTPUT);
+    pinMode(microSwitch, INPUT_PULLUP);
 }
 
 MedsBox::MedsBox(String remedy, String description, int periodicity, int hour, int minutes, int box, bool active, int pin){
@@ -22,8 +25,11 @@ MedsBox::MedsBox(String remedy, String description, int periodicity, int hour, i
     this->hour = hour;
     this->minutes = minutes;
     this->active = active;
-    this->pin = pin;
-    pinMode(pin, OUTPUT);
+    this->output = output;
+    this->microSwitch = microSwitch;
+    this->selected = false;
+    pinMode(output, OUTPUT);
+    pinMode(microSwitch, INPUT_PULLUP);
 }
 
 int MedsBox::getBox(){
@@ -54,8 +60,16 @@ bool MedsBox::getActive() {
     return this->active;
 }
 
-int MedsBox::getPin() {
-    return this->pin;
+int MedsBox::getOutput() {
+    return this->output;
+}
+
+int MedsBox::getMicroSwitch() {
+    return this->microSwitch;
+}
+
+bool MedsBox::getSelected() {
+    return this->selected;
 }
 
 void MedsBox::setBox(int box) {
@@ -86,9 +100,18 @@ void MedsBox::setActive(bool active) {
     this->active = active;
 }
 
-void MedsBox:: setPin(int pin) {
-    this->pin = pin;
-    pinMode(pin, OUTPUT);
+void MedsBox:: setOutput(int output) {
+    this->output = output;
+    pinMode(output, OUTPUT);
+}
+
+void MedsBox:: setMicroSwitch(int microSwitch) {
+    this->microSwitch = microSwitch;
+    pinMode(microSwitch, INPUT_PULLUP);
+}
+
+void MedsBox:: setSelected(bool selected) {
+    this-> selected = selected;
 }
 
 bool MedsBox::compare(int hour, int minutes) {

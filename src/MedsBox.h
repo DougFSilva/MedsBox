@@ -12,11 +12,13 @@ class MedsBox {
         int hour;
         int minutes;
         bool active;
-        int pin;
+        int output;
+        int microSwitch;
+        bool selected;
 
     public:
-        MedsBox(int box, int pin);
-        MedsBox(String remedy, String description, int periodicity, int hour, int minutes, int box, bool active, int pin);
+        MedsBox(int box, int output, int microSwitch);
+        MedsBox(String remedy, String description, int periodicity, int hour, int minutes, int box, bool active, int output, int microSwitch, bool selected);
         int getBox();
         String getRemedy();
         String getDescription();
@@ -24,7 +26,9 @@ class MedsBox {
         int getHour();
         int getMinutes();
         bool getActive();
-        int getPin();
+        int getOutput();
+        int getMicroSwitch();
+        bool getSelected();
         void setBox(int id);
         void setRemedy(String remedy);
         void setDescription(String description);
@@ -32,7 +36,9 @@ class MedsBox {
         void setHour(int hour);
         void setMinutes(int minutes);
         void setActive(bool active);
-        void setPin(int pin);
+        void setOutput(int pin);
+        void setMicroSwitch(int microSwitch);
+        void setSelected(bool selected);
         bool compare(int hour, int minutes);
         void on();
         void off();
