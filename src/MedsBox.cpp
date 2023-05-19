@@ -17,7 +17,7 @@ MedsBox::MedsBox(int box, int output, int microSwitch){
     pinMode(microSwitch, INPUT_PULLUP);
 }
 
-MedsBox::MedsBox(String remedy, String description, int periodicity, int hour, int minutes, int box, bool active, int pin){
+MedsBox::MedsBox(String remedy, String description, int periodicity, int hour, int minutes, int box, bool active, int output, int microSwitch, bool selected){
     this->box = box;
     this->remedy = remedy;
     this->description = description;
@@ -27,7 +27,7 @@ MedsBox::MedsBox(String remedy, String description, int periodicity, int hour, i
     this->active = active;
     this->output = output;
     this->microSwitch = microSwitch;
-    this->selected = false;
+    this->selected = selected;
     pinMode(output, OUTPUT);
     pinMode(microSwitch, INPUT_PULLUP);
 }
