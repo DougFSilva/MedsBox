@@ -125,11 +125,11 @@ bool MedsBox::compare(int hour, int minutes) {
 }
 
 void MedsBox::on(){
-    digitalWrite(this->pin, HIGH);
+    digitalWrite(this->output, HIGH);
 }
 
 void MedsBox::off(){
-    digitalWrite(this->pin, LOW);
+    digitalWrite(this->output, LOW);
 }
 
 
